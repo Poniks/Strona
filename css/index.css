@@ -5,6 +5,8 @@
 body {
   margin: 0;
   height: 300vh;
+  overflow-x: hidden;
+  font-family: muli, sans-serif;
 }
 
 .container {
@@ -25,15 +27,24 @@ a {
   position: absolute;
   top: 0;
   left: 0;
-  background-image: url("../bg.jpg");
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
+  overflow: hidden;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+.bg img {
+  position: absolute;
+  top: -10%;
+  object-fit: cover;
+  width: 120%;
+  height: 120%;
+  z-index: -1;
+  opacity: 1;
 }
 
 header nav {
   position: fixed;
   width: 100%;
+  padding-top: 40px;
+  top: 0;
 }
 header nav .container {
   display: flex;
@@ -41,7 +52,7 @@ header nav .container {
   align-items: center;
 }
 header nav .container img {
-  height: 100px;
+  width: 90px;
 }
 header nav .container ul {
   list-style-type: none;
@@ -59,6 +70,175 @@ header nav .container ul li a {
 }
 header nav .container ul li:last-child {
   margin-right: 0px;
+}
+
+main {
+  width: 100%;
+}
+main .home-banner {
+  height: 100vh;
+}
+main .home-banner .container {
+  padding-top: 1px;
+  margin-top: -1px;
+  height: 100%;
+}
+main .home-banner .container .text-content {
+  color: white;
+  position: absolute;
+  top: 60%;
+  left: 0;
+  transform: translateY(-50%);
+}
+main .home-banner .container .text-content h1 {
+  font-size: 40px;
+  font-weight: 200;
+}
+main .home-banner .container .text-content h1 p {
+  display: block;
+  color: #00b6dc;
+  margin: 20px 0;
+}
+main .home-banner .container .text-content .btn {
+  padding: 15px 0;
+  margin-right: 20px;
+  border-radius: 30px;
+  text-transform: uppercase;
+  font-weight: 400;
+  border: 2px solid #f0f3f5;
+}
+main .home-banner .container .text-content .btn.first {
+  background-color: white;
+  width: 180px;
+}
+main .home-banner .container .text-content .btn.second {
+  background-color: transparent;
+  color: white;
+  width: 200px;
+}
+main .home-banner .container .text-content .slider-box {
+  width: 650px;
+  overflow: hidden;
+}
+main .home-banner .container .text-content .slider-box .slider {
+  display: inline-flex;
+  transition: 0.5s;
+}
+main .home-banner .container .text-content .slider-box .slider .slide {
+  width: 650px;
+}
+main .home-banner .container .text-content .controller {
+  position: absolute;
+  top: 0;
+  right: -100%;
+  display: flex;
+  flex-direction: column;
+}
+main .home-banner .container .text-content .controller .radio {
+  margin: 15px 0;
+  width: 12px;
+  height: 12px;
+  background-color: white;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: 0.5s background-color;
+}
+main .home-banner .container .text-content .controller .radio.active {
+  background-color: orange;
+}
+main .home-banner .container .text-content .controller .radio:hover {
+  border: 2px solid orange;
+}
+main .home-banner .container .text-content i {
+  margin-top: 90px;
+  font-size: 30px;
+  cursor: pointer;
+  margin-right: 15px;
+  transition: 0.5s;
+}
+main .home-banner .container .text-content i:hover {
+  color: orange;
+}
+main .informations .container .informations__for-whom {
+  display: flex;
+  margin-top: 200px;
+}
+main .informations .container .informations__for-whom__text {
+  flex-basis: 59%;
+  padding-right: 70px;
+  font-size: 18px;
+  line-height: 1.778;
+  color: #333333;
+}
+main .informations .container .informations__for-whom__text h2 {
+  font-size: 36px;
+  color: #002841;
+  margin-top: 0px;
+}
+main .informations .container .informations__for-whom__text__title-list {
+  margin-top: 70px;
+}
+main .informations .container .informations__for-whom__text ol {
+  list-style-type: none;
+}
+main .informations .container .informations__for-whom__text ol li {
+  margin-bottom: 20px;
+}
+main .informations .container .informations__for-whom__text ol li i {
+  font-size: 18px;
+  margin-left: 35px;
+  color: lightskyblue;
+}
+main .informations .container .informations__for-whom__img {
+  flex-basis: 41%;
+  height: 510px;
+  overflow: hidden;
+  position: relative;
+  box-shadow: 0px 11px 35px 0px rgba(95, 95, 95, 0.22);
+}
+main .informations .container .informations__for-what {
+  display: flex;
+  margin-top: 200px;
+}
+main .informations .container .informations__for-what__text {
+  flex-basis: 59%;
+  padding-left: 70px;
+  font-size: 18px;
+  line-height: 1.778;
+  color: #333333;
+}
+main .informations .container .informations__for-what__text h2 {
+  font-size: 36px;
+  color: #002841;
+  margin-top: 0px;
+}
+main .informations .container .informations__for-what__img {
+  flex-basis: 41%;
+  height: 510px;
+  overflow: hidden;
+  position: relative;
+  box-shadow: 0px 11px 35px 0px rgba(95, 95, 95, 0.22);
+}
+main .informations .container .informations__for-what__img__handshake {
+  top: -27%;
+  z-index: -2;
+}
+main .informations .container .informations__for-what__img__new {
+  top: -10%;
+  left: -10%;
+  z-index: -1;
+}
+main .informations .container .informations__for-what__img img {
+  position: absolute;
+}
+main .informations .container .informations__for-what__img p {
+  position: absolute;
+  top: 4%;
+  z-index: 1;
+  font-size: 26px;
+  font-weight: bold;
+  color: white;
+  transform: rotate(315deg);
 }
 
 /*# sourceMappingURL=index.css.map */
