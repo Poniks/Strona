@@ -264,6 +264,15 @@ main .informations .container .informations__with-who__img {
   box-shadow: 0px 11px 35px 0px rgba(95, 95, 95, 0.22);
   z-index: 1;
 }
+main .informations .container .informations__with-who__img::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+}
 main .informations .container .informations__with-who__img img[alt=building] {
   position: absolute;
   left: -80%;
@@ -272,45 +281,84 @@ main .informations .container .informations__with-who__img img[alt=building] {
 }
 main .informations .container .informations__with-who__img img[alt=play] {
   position: absolute;
-  top: 50%;
-  left: 51%;
+  top: 51%;
+  left: 50%;
   transform: translate(-50%, -50%);
   z-index: 2;
   cursor: pointer;
+  border-radius: 50%;
+  transition: 0.5s;
 }
-main .informations .container .informations__with-who__img__bg-play {
-  position: absolute;
+main .informations .container .informations__with-who__img img[alt=play]:hover {
+  background-color: rgba(0, 182, 220, 0.2);
+}
+main .popup.active .overlay {
+  display: block;
+}
+main .popup.active .content {
+  display: block;
+}
+main .popup .overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: 1;
+  display: none;
+}
+main .popup .content {
+  display: none;
+  position: fixed;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 94px;
-  height: 94px;
+  z-index: 2;
+  text-align: center;
+}
+main .popup .content .close-btn {
+  position: absolute;
+  right: -50px;
+  top: -60px;
+  color: white;
+  font-size: 46px;
   border-radius: 50%;
-  background-color: #00b6dc;
-  box-shadow: 0px 5px 24px 0px rgba(0, 182, 220, 0.41);
-  opacity: 0.702;
-  z-index: 1;
   cursor: pointer;
 }
-main .informations .container .informations__with-who__img__bg-play::after {
-  content: "";
-  position: absolute;
-  top: -20%;
-  left: -20%;
-  width: 140%;
-  height: 140%;
-  background-color: #00b6dc;
-  opacity: 0.2;
-  border-radius: 50%;
-  z-index: 0;
+
+.form-section {
+  height: 100vh;
+  background-color: #f5f8fa;
 }
-main .informations .container .informations__with-who__img__bg {
+.form-section .container .form-section__form form input {
+  background-color: #f2f2f2;
+  padding: 12px;
+  border-radius: 3px;
+  width: 250px;
+  border: none;
+  box-shadow: 0px 0px 50px 0px rgba(95, 95, 95, 0.22);
+}
+.form-section .container .form-section__form form input:focus::placeholder {
+  color: transparent;
+}
+.form-section .container .form-section__form form input::placeholder {
+  color: #222;
+  transition: color 0.3s;
+}
+.form-section .container .form-section__form form .placeholder {
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.5);
+  left: 12px;
+  top: calc(50% + 10px);
+  transform: translateY(-50%);
+  color: #aaa;
+  transition: 0.3s;
+}
+.form-section .container .form-section__form form input:valid + .placeholder,
+.form-section .container .form-section__form form input:focus + .placeholder {
+  top: 0px;
+  font-size: 10px;
+  color: #222;
 }
 
 /*# sourceMappingURL=index.css.map */

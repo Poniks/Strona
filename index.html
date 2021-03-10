@@ -131,15 +131,32 @@
                         </div>
                         <div class="informations__with-who__img">
                             <img src="./building.png" alt="building">
-                            <div class="informations__with-who__img__bg"></div>
-                            <div class="informations__with-who__img__bg-play"></div>
-                            <!-- <div class="informations__with-who__img__bg-shadow"></div> -->
-                            <img src="./play.png" alt="play">
+                            <img src="./play-button.png" alt="play" onclick="togglePopup()">
                         </div>
                     </div>
                 </div>
             </div>
+
+            <div class="popup" id="popup-1">
+                <div class="overlay" onclick="togglePopup()"></div>
+                <div class="content">
+                    <div class="close-btn" onclick="togglePopup()">&times;</div>
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/jNQXAC9IVRw" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+            </div>
         </main>
+        <div class="form-section">
+            <div class="container">
+                <div class="form-section__form">
+                    <h3>Nie znalazłeś odpowiedniego kontaktu?</h3>
+                    <p>Skorzystaj z formularza.</p>
+                    <form action="">
+                        <input type="text" required>
+                        <span class="placeholder">Enter Name</span>
+                    </form>
+                </div>
+            </div>
+        </div>
         <script src="https://kit.fontawesome.com/7668132035.js" crossorigin="anonymous"></script>
         <script>
             let slider = document.getElementById('slider');
@@ -205,6 +222,10 @@
                     slider.style.transform = 'translateX(-75%)';
                     radio4.classList.add('active');
                 } else if(active === 'radio4') slider.style.transform = 'translateX(-75%)';        
+            }
+            
+            function togglePopup() {
+                document.getElementById('popup-1').classList.toggle('active');
             }
         </script>
     </body>
