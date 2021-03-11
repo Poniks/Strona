@@ -45,6 +45,13 @@ header nav {
   width: 100%;
   padding-top: 40px;
   top: 0;
+  z-index: 10;
+  transition: 0.5s;
+}
+header nav.sticky {
+  padding: 5px 0;
+  background-color: #001927;
+  box-shadow: 0px 5px 25px -6px rgba(0, 0, 0, 0.75);
 }
 header nav .container {
   display: flex;
@@ -67,6 +74,17 @@ header nav .container ul li {
 header nav .container ul li a {
   color: white;
   font-size: 16px;
+}
+header nav .container ul li a::after {
+  content: "";
+  display: block;
+  width: 0;
+  height: 1px;
+  background: white;
+  transition: width 0.5s;
+}
+header nav .container ul li a:hover::after {
+  width: 100%;
 }
 header nav .container ul li:last-child {
   margin-right: 0px;
@@ -100,21 +118,34 @@ main .home-banner .container .text-content h1 p {
   margin: 20px 0;
 }
 main .home-banner .container .text-content .btn {
-  padding: 15px 0;
+  width: 200px;
+  padding: 20px 0;
   margin-right: 20px;
   border-radius: 30px;
   text-transform: uppercase;
   font-weight: 400;
+  display: inline-block;
+  text-align: center;
   border: 2px solid #f0f3f5;
+  transition: 0.5s;
 }
 main .home-banner .container .text-content .btn.first {
   background-color: white;
-  width: 180px;
+  width: 190px;
+  color: #002841;
+}
+main .home-banner .container .text-content .btn.first:hover {
+  color: white;
+  background-color: transparent;
 }
 main .home-banner .container .text-content .btn.second {
   background-color: transparent;
   color: white;
-  width: 200px;
+  width: 230px;
+}
+main .home-banner .container .text-content .btn.second:hover {
+  color: #002841;
+  background-color: white;
 }
 main .home-banner .container .text-content .slider-box {
   width: 650px;
@@ -328,37 +359,170 @@ main .popup .content .close-btn {
 }
 
 .form-section {
-  height: 100vh;
   background-color: #f5f8fa;
+  padding: 50px 0;
 }
-.form-section .container .form-section__form form input {
-  background-color: #f2f2f2;
-  padding: 12px;
+.form-section .container .form-section__form {
+  text-align: center;
+}
+.form-section .container .form-section__form h3 {
+  color: #333333;
+  font-size: 18px;
+}
+.form-section .container .form-section__form p {
+  color: #7b94a5;
+}
+.form-section .container .form-section__form p.checkbox-text {
+  margin-top: 0px;
+  padding-left: 15px;
+  text-align: left;
+  font-size: 10px;
+  color: #002841;
+  font-weight: bold;
+  line-height: 1.6;
+}
+.form-section .container .form-section__form form {
+  margin: 40px auto 0px;
+  width: 50%;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+.form-section .container .form-section__form form label {
+  position: relative;
+}
+.form-section .container .form-section__form form label input[type=text], .form-section .container .form-section__form form label textarea {
+  background-color: white;
+  padding: 24px 12px 12px;
+  margin-bottom: 20px;
   border-radius: 3px;
-  width: 250px;
+  font-size: 16px;
+  width: 270px;
   border: none;
-  box-shadow: 0px 0px 50px 0px rgba(95, 95, 95, 0.22);
+  appearance: none;
+  outline: none;
+  box-shadow: 0px 3px 6px 0px rgba(145, 154, 159, 0.08);
+  transition: 0.3s;
 }
-.form-section .container .form-section__form form input:focus::placeholder {
+.form-section .container .form-section__form form label input[type=text][id=email], .form-section .container .form-section__form form label textarea[id=email] {
+  width: 100%;
+}
+.form-section .container .form-section__form form label input[type=text]:focus, .form-section .container .form-section__form form label textarea:focus {
+  box-shadow: 0px 8px 8px 0px rgba(145, 154, 159, 0.16);
+}
+.form-section .container .form-section__form form label input[type=text]:focus::placeholder, .form-section .container .form-section__form form label textarea:focus::placeholder {
   color: transparent;
 }
-.form-section .container .form-section__form form input::placeholder {
+.form-section .container .form-section__form form label input[type=text]::placeholder, .form-section .container .form-section__form form label textarea::placeholder {
   color: #222;
   transition: color 0.3s;
 }
-.form-section .container .form-section__form form .placeholder {
+.form-section .container .form-section__form form label input[type=checkbox] {
+  background-color: red;
+  border: 1px solid red;
+}
+.form-section .container .form-section__form form label textarea {
+  width: 100%;
+  max-width: 100%;
+  min-width: 300px;
+  min-height: 100px;
+  max-height: 600px;
+}
+.form-section .container .form-section__form form label .placeholder {
   position: absolute;
   left: 12px;
-  top: calc(50% + 10px);
+  top: calc(50% - 10px);
   transform: translateY(-50%);
   color: #aaa;
   transition: 0.3s;
+  cursor: text;
 }
-.form-section .container .form-section__form form input:valid + .placeholder,
-.form-section .container .form-section__form form input:focus + .placeholder {
-  top: 0px;
+.form-section .container .form-section__form form label .placeholder.textarea {
+  top: 35px;
+}
+.form-section .container .form-section__form form label textarea:valid + .placeholder,
+.form-section .container .form-section__form form label textarea:focus + .placeholder,
+.form-section .container .form-section__form form label input:valid + .placeholder,
+.form-section .container .form-section__form form label input:focus + .placeholder {
+  top: 15px;
   font-size: 10px;
-  color: #222;
+}
+.form-section .container .form-section__form form input[type=submit] {
+  width: 120px;
+  padding: 15px;
+  background-color: #00b6dc;
+  box-shadow: 0px 11px 24px 0px rgba(0, 182, 220, 0.12);
+  border-radius: 25px;
+  border: none;
+  color: white;
+  font-size: 14px;
+  text-transform: uppercase;
+  margin: 40px auto 0;
+}
+
+footer {
+  background-color: #001927;
+}
+footer .container .footer-items {
+  padding-top: 90px;
+  padding-bottom: 90px;
+  display: flex;
+  color: white;
+}
+footer .container .footer-items ul {
+  font-size: 15px;
+  text-align: left;
+  padding: 0 55px 0 0;
+  list-style-type: none;
+}
+footer .container .footer-items ul li {
+  margin: 20px 0;
+}
+footer .container .footer-items ul li:first-child {
+  margin-top: 0px;
+}
+footer .container .footer-items ul li a {
+  color: white;
+  position: relative;
+  overflow: hidden;
+  display: block;
+}
+footer .container .footer-items ul li a:hover span {
+  transform: translateY(-100%);
+}
+footer .container .footer-items ul li a span {
+  display: block;
+  padding: 5px 0;
+  transition: 0.2s;
+}
+footer .container .footer-items ul li a span:last-child {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  color: #00b6dc;
+}
+footer .container .footer-items ul:last-child {
+  padding-right: 0px;
+}
+footer .container .footer-items ul:first-child {
+  width: 300px;
+}
+footer .container .footer-items ul:first-child .footer-items__map {
+  position: relative;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  overflow: hidden;
+}
+footer .container .footer-items ul:first-child .footer-items__map iframe {
+  position: absolute;
+  top: -240px;
+  left: -230px;
+}
+footer .container .footer-items ul:first-child li {
+  margin: 15px 0;
 }
 
 /*# sourceMappingURL=index.css.map */

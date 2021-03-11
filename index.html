@@ -12,7 +12,7 @@
             <img src="bg.jpg" alt="bg">
         </div>   
         <header>
-            <nav>
+            <nav class="sticky">
                 <div class="container">
                     <img src="logo.png" alt="logo">
                     <ul>
@@ -33,23 +33,23 @@
                             <div class="slider" id='slider'>
                                 <div class="slide">
                                     <h1>Będziesz się uczyć z ciekawością. <p>Obiecujemy.</p></h1>
-                                    <button class="btn first">Zobacz więcej</button>
-                                    <button class="btn second">Umów się z aniołem</button>
+                                    <a href="#" class="btn first">Zobacz więcej</a>
+                                    <a href="#" class="btn second">Umów się z aniołem</a>
                                 </div>
                                 <div class="slide">
                                     <h1>Będziesz się uczyć z ciekawością. <p>Obiecujemy.</p></h1>
-                                    <button class="btn first">Zobacz więcej</button>
-                                    <button class="btn second">Umów się z aniołem</button>
+                                    <a href="#" class="btn first">Zobacz więcej</a>
+                                    <a href="#" class="btn second">Umów się z aniołem</a>
                                 </div>
                                 <div class="slide">
                                     <h1>Będziesz się uczyć z ciekawością. <p>Obiecujemy.</p></h1>
-                                    <button class="btn first">Zobacz więcej</button>
-                                    <button class="btn second">Umów się z aniołem</button>
+                                    <a href="#" class="btn first">Zobacz więcej</a>
+                                    <a href="#" class="btn second">Umów się z aniołem</a>
                                 </div>
                                 <div class="slide">
                                     <h1>Będziesz się uczyć z ciekawością. <p>Obiecujemy.</p></h1>
-                                    <button class="btn first">Zobacz więcej</button>
-                                    <button class="btn second">Umów się z aniołem</button>
+                                    <a href="#" class="btn first">Zobacz więcej</a>
+                                    <a href="#" class="btn second">Umów się z aniołem</a>
                                 </div>
                             </div>
                         </div>
@@ -150,13 +150,212 @@
                 <div class="form-section__form">
                     <h3>Nie znalazłeś odpowiedniego kontaktu?</h3>
                     <p>Skorzystaj z formularza.</p>
-                    <form action="">
-                        <input type="text" required>
-                        <span class="placeholder">Enter Name</span>
+                    <form action="/action.php">
+                        <label>
+                            <input type="text" required>
+                            <span class="placeholder">Imię</span>
+                        </label> 
+                        <label>
+                            <input type="text" required>
+                            <span class="placeholder">Nazwisko</span>
+                        </label> 
+                        <label style="width: 100%;">
+                            <input type="text" id="email" required>
+                            <span class="placeholder email">Adres e-mail</span>
+                        </label>  
+                        <label style="width: 100%; text-align: left;">
+                            <textarea name="" id="" cols="30" rows="10" required></textarea>
+                            <span class="placeholder textarea">Napisz wiadomość</span>
+                        </label> 
+                        <label style="display: flex">
+                            <input type="checkbox">
+                            <p class="checkbox-text">Wyrażam zgodę na przetwarzanie moich danych osobowych w rozumiemiu ustawy z dnia 29 sierpnia
+                                1997 roku o ochronie danych osobowych oraz ustawy z dnia 16 lipca 2004 roku Prawo telekomunikacyjne
+                                w celach marketingowych przez Collegium Da Vinci i oświadczam, iż podanie przeze mnie danych
+                                osobowych jest dobrowolne oraz iż zostałem poinformowany o prawie żądania dostępu do moich
+                                danych osobowych, ich zmiany oraz usunięcia.
+                            </p>
+                        </label>  
+                        <input type="submit" value="Wyślij">            
                     </form>
                 </div>
             </div>
         </div>
+        <footer>
+            <div class="container">
+                <div class="footer-items">
+                    <ul>
+                        <li>ul. Głogowska 10</li>
+                        <li>61-719 Poznań</li>
+                        <li>tel. 61 27 11 000</li>
+                        <li class="footer-items__map">
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d1696.0214365753943!2d16.933193911986045!3d52.417116526705904!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1spl!2spl!4v1615475716758!5m2!1spl!2spl" width="800" height="600" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                        </li>
+                        <li></li>
+                    </ul>
+                    <ul>
+                        <li>
+                            <a href="">
+                                <span>O nas</span>
+                                <span>O nas</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="">
+                                <span>Dlaczego CDV</span>
+                                <span>Dlaczego CDV</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="">
+                                <span>Kadra naukowa</span>
+                                <span>Kadra naukowa</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="">
+                                <span>Dla mediów</span>
+                                <span>Dla mediów</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="">
+                                <span>Kontakt</span>
+                                <span>Kontakt</span>
+                            </a>
+                        </li>
+                    </ul>
+                    <ul>
+                        <li>
+                            <a href="">
+                                <span>Dla kandydata</span>
+                                <span>Dla kandydata</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="">
+                                <span>Poradnik maturzysty</span>
+                                <span>Poradnik maturzysty</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="">
+                                <span>Rekrutacja</span>
+                                <span>Rekrutacja</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="">
+                                <span>Kredyt studencki</span>
+                                <span>Kredyt studencki</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="">
+                                <span>Studia dla cudzoziemców</span>
+                                <span>Studia dla cudzoziemców</span>
+                            </a>
+                        </li>
+                    </ul>
+                    <ul>
+                        <li>
+                            <a href="">
+                                <span>Dla studenta</span>
+                                <span>Dla studenta</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="">
+                                <span>Wirtualna Uczelnia</span>
+                                <span>Wirtualna Uczelnia</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="">
+                                <span>Stypendia</span>
+                                <span>Stypendia</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="">
+                                <span>Biuro Karier</span>
+                                <span>Biuro Karier</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="">
+                                <span>Studiuj dalej</span>
+                                <span>Studiuj dalej</span>
+                            </a>
+                        </li>
+                    </ul>
+                    <ul>
+                        <li>
+                            <a href="">
+                                <span>Dla biznesu</span>
+                                <span>Dla biznesu</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="">
+                                <span>Współpraca z biznesem</span>
+                                <span>Współpraca z biznesem</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="">
+                                <span>EmotionsLAB</span>
+                                <span>EmotionsLAB</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="">
+                                <span>Wynajem sal</span>
+                                <span>Wynajem sal</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="">
+                                <span>Znajdź pracownika</span>
+                                <span>Znajdź pracownika</span>
+                            </a>
+                        </li>
+                    </ul>
+                    <ul>
+                        <li>
+                            <a href="">
+                                <span>Na skróty</span>
+                                <span>Na skróty</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="">
+                                <span>Aktualności</span>
+                                <span>Aktualności</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="">
+                                <span>Wydarzenia</span>
+                                <span>Wydarzenia</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="">
+                                <span>Konferencje</span>
+                                <span>Konferencje</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="">
+                                <span>Blog</span>
+                                <span>Blog</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </footer>
         <script src="https://kit.fontawesome.com/7668132035.js" crossorigin="anonymous"></script>
         <script>
             let slider = document.getElementById('slider');
@@ -227,6 +426,14 @@
             function togglePopup() {
                 document.getElementById('popup-1').classList.toggle('active');
             }
+
+            window.addEventListener('scroll', function() {
+                if (document.body.scrollTop > 0 || document.documentElement.scrollTop > 0) {
+                    document.querySelector("nav").className = "sticky";
+                } else {
+                    document.querySelector("nav").className = "";
+                }
+            })
         </script>
     </body>
 </html>

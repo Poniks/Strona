@@ -43,11 +43,18 @@ a {
 
 header {
     nav {
-        // background-color: lightblue;
         position: fixed;
         width: 100%;
         padding-top: 40px;
         top: 0;
+        z-index: 10;
+        transition: .5s;
+
+        &.sticky {
+            padding: 5px 0;
+            background-color: rgb(0, 25, 39);
+            box-shadow: 0px 5px 25px -6px rgba(0, 0, 0, 0.75);
+        }
 
         .container {
             display: flex;
@@ -71,6 +78,19 @@ header {
                     a {
                         color: white;
                         font-size: 16px;
+
+                        &::after {
+                            content: '';
+                            display: block;
+                            width: 0;
+                            height: 1px;
+                            background: white;
+                            transition: width .5s;
+                        }
+
+                        &:hover::after {
+                            width: 100%;
+                        }
                     }
                     &:last-child {
                         margin-right: 0px;
@@ -108,22 +128,37 @@ main {
                 }
 
                 .btn {
-                    padding: 15px 0;
+                    width: 200px;
+                    padding: 20px 0;
                     margin-right: 20px;
                     border-radius: 30px;
                     text-transform: uppercase;
                     font-weight: 400;
+                    display: inline-block;
+                    text-align: center;
                     border: 2px solid rgb(240, 243, 245);
+                    transition: .5s;
 
                     &.first {
                         background-color: rgb(255,255,255);
-                        width: 180px;
+                        width: 190px;
+                        color: #002841;
+
+                        &:hover {
+                            color: white;
+                            background-color: transparent;
+                        }
                     }
 
                     &.second {
                         background-color: transparent;
                         color: white;
-                        width: 200px;
+                        width: 230px;
+
+                        &:hover {
+                            color: #002841; 
+                            background-color: white;
+                        }
                     }
                 }
                 
@@ -388,46 +423,198 @@ main {
 }
 
 .form-section {
-    height: 100vh;
     background-color: rgb(245, 248, 250);
+    padding: 50px 0;
     .container {
         .form-section__form {
-            form {
-                input {
-                    background-color: #f2f2f2;
-                    padding: 12px;
-                    border-radius: 3px;
-                    width: 250px;
-                    border: none;
-                    box-shadow: 0px 0px 50px 0px rgba(95, 95, 95, 0.22);
+            text-align: center;
+            h3 {
+                color: rgb(51, 51, 51);
+                font-size: 18px;
+            }
 
-                    &:focus::placeholder {
-                        color: transparent;
-                    }
+            p {
+                color: #7b94a5;  
 
-                    &::placeholder {
-                        color: #222;
-                        transition: color 0.3s;    
-                    }
-                }
-
-                .placeholder {
-                    position: absolute;
-                    left: 12px;
-                    top: calc(50% + 10px);
-                    transform: translateY(-50%);
-                    color: #aaa;
-                    transition: 0.3s;
-                }
-                input:valid + .placeholder,
-                input:focus + .placeholder {
-                    top: 0px;
+                &.checkbox-text {
+                    margin-top: 0px;
+                    padding-left: 15px;
+                    text-align: left;
                     font-size: 10px;
-                    color: #222;
+                    color: rgb(0, 40, 65);
+                    font-weight: bold;
+                    line-height: 1.6;
+                }
+            }
+            form {
+                margin: 40px auto 0px;
+                width: 50%;
+                display: flex;
+                justify-content: space-between;
+                flex-wrap: wrap;
+            
+                label {
+                    position: relative;       
+
+                    input[type="text"], textarea {
+                        background-color: white;
+                        padding: 24px 12px 12px;
+                        margin-bottom: 20px;
+                        border-radius: 3px;
+                        font-size: 16px;
+                        width: 270px;
+                        border: none;
+                        appearance: none;
+                        outline: none;
+                        box-shadow: 0px 3px 6px 0px rgba(145, 154, 159, 0.08);
+                        transition: 0.3s;
+
+                        &[id="email"] {
+                            width: 100%;
+                        }
+    
+                        &:focus {
+                            box-shadow: 0px 8px 8px 0px rgba(145, 154, 159, 0.16);  
+                        }
+    
+                        &:focus::placeholder {
+                            color: transparent;
+                        }
+    
+                        &::placeholder {
+                            color: #222;
+                            transition: color 0.3s;    
+                        }
+                    }
+
+                    input[type="checkbox"] {
+                        background-color: red;
+                        border: 1px solid red;
+                    }
+
+                    textarea {
+                        width: 100%;
+                        max-width: 100%;
+                        min-width: 300px;
+                        min-height: 100px;
+                        max-height: 600px;
+                    }
+                    
+                    .placeholder {
+                        position: absolute;
+                        left: 12px;
+                        top: calc(50% - 10px);
+                        transform: translateY(-50%);
+                        color: #aaa;
+                        transition: 0.3s;
+                        cursor: text;
+
+                        &.textarea {
+                            top: 35px;
+                        }
+                    }
+
+                    textarea:valid + .placeholder,
+                    textarea:focus + .placeholder,
+                    input:valid + .placeholder,
+                    input:focus + .placeholder {
+                        top: 15px;
+                        font-size: 10px;
+                    }
+                }  
+                
+                input[type="submit"] {
+                    width: 120px;
+                    padding: 15px;
+                    background-color: rgb(0, 182, 220);
+                    box-shadow: 0px 11px 24px 0px rgba(0, 182, 220, 0.12);
+                    border-radius: 25px;
+                    border: none;
+                    color: white;
+                    font-size: 14px;
+                    text-transform: uppercase;
+                    margin: 40px auto 0;
                 }
             }
         }
     }
 }
-  
-  
+
+footer {
+    background-color: rgb(0, 25, 39);
+    .container {
+        .footer-items {
+            padding-top: 90px;
+            padding-bottom: 90px;
+            display: flex;
+            color: white;
+            
+            ul {
+                font-size: 15px;
+                text-align: left;
+                padding: 0 55px 0 0;
+                list-style-type: none;
+                
+                li {
+                    margin: 20px 0;
+
+                    &:first-child {
+                        margin-top: 0px;
+                    }
+                    
+                    a {
+                        color: white;
+                        position: relative;
+                        overflow: hidden;
+                        display: block;
+
+                        &:hover {
+                            span {
+                                transform: translateY(-100%);
+                            }
+                        }
+                        span {
+                            display: block;
+                            padding: 5px 0;
+                            transition: 0.2s;
+
+                            &:last-child {
+                                position: absolute;
+                                top: 100%;
+                                left: 0;
+                                width: 100%;
+                                height: 100%;
+                                color: #00b6dc;
+                            }
+                        }
+                    }
+                }
+
+                &:last-child {
+                    padding-right: 0px;
+                } 
+
+                &:first-child {
+                    width: 300px;
+    
+                    .footer-items__map {
+                        position: relative;
+                        width: 200px;
+                        height: 200px;
+                        border-radius: 50%;
+                        overflow: hidden;
+                        iframe {
+                            position: absolute;
+                            top: -240px;
+                            left: -230px;
+                        }
+                    }
+
+                    li {
+                        margin: 15px 0;
+                    }
+                }
+            }
+        }
+    }
+}
