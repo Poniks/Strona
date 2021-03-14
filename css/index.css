@@ -5,7 +5,6 @@
 
 body {
   margin: 0;
-  height: 300vh;
   overflow-x: hidden;
   font-family: muli, sans-serif;
 }
@@ -108,9 +107,7 @@ main .home-banner .container {
 main .home-banner .container .home-banner__content {
   color: white;
   position: absolute;
-  top: 60%;
   left: 0;
-  transform: translateY(-50%);
 }
 main .home-banner .container .home-banner__content__slider-box {
   width: 650px;
@@ -119,9 +116,13 @@ main .home-banner .container .home-banner__content__slider-box {
 main .home-banner .container .home-banner__content__slider-box__slider {
   display: inline-flex;
   transition: 0.5s;
+  height: 100vh;
+  /* too */
 }
 main .home-banner .container .home-banner__content__slider-box__slider__slide {
   width: 650px;
+  align-self: center;
+  /* too */
 }
 main .home-banner .container .home-banner__content__slider-box__slider__slide h2 {
   font-size: 40px;
@@ -166,7 +167,7 @@ main .home-banner .container .home-banner__content__slider-box__slider__slide .b
 }
 main .home-banner .container .home-banner__content .controller {
   position: absolute;
-  top: 0;
+  top: 40%;
   right: -93%;
   display: flex;
   flex-direction: column;
@@ -187,14 +188,17 @@ main .home-banner .container .home-banner__content .controller .radio:hover {
   border: 2px solid orange;
 }
 main .home-banner .container .home-banner__content i {
-  margin-top: 90px;
+  position: absolute;
+  top: calc(50% + 200px);
   font-size: 30px;
   cursor: pointer;
-  margin-right: 15px;
   transition: 0.5s;
 }
 main .home-banner .container .home-banner__content i:hover {
   color: orange;
+}
+main .home-banner .container .home-banner__content i#rightArrow {
+  margin-left: 50px;
 }
 main .informations .container .informations__for-whom {
   display: flex;
@@ -405,6 +409,8 @@ main .popup .content .close-btn {
   font-size: 16px;
   width: 270px;
   border: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
   appearance: none;
   outline: none;
   box-shadow: 0px 3px 6px 0px rgba(145, 154, 159, 0.08);
@@ -415,6 +421,11 @@ main .popup .content .close-btn {
 }
 .form-section .container .form-section__form form label input[type=text][id=email], .form-section .container .form-section__form form label textarea[id=email] {
   width: 100%;
+}
+.form-section .container .form-section__form form label input[type=text][type=checkbox], .form-section .container .form-section__form form label textarea[type=checkbox] {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
 }
 .form-section .container .form-section__form form label input[type=text]:focus, .form-section .container .form-section__form form label textarea:focus {
   box-shadow: 0px 8px 8px 0px rgba(145, 154, 159, 0.16);
@@ -463,6 +474,7 @@ main .popup .content .close-btn {
   font-size: 14px;
   text-transform: uppercase;
   margin: 40px auto 0;
+  outline: none;
   transition: 0.5s;
   cursor: pointer;
 }
@@ -470,6 +482,10 @@ main .popup .content .close-btn {
   color: #00b6dc;
   border: 1px solid #00b6dc;
   background-color: transparent;
+  border-radius: 0%;
+}
+.form-section .container .form-section__form form input[type=submit]:focus {
+  outline: none;
 }
 
 footer {
@@ -979,6 +995,9 @@ footer .container .footer-items ul li a span:last-child {
   }
   main .home-banner .container .home-banner__content__slider-box__slider__slide .btn.first {
     width: 140px;
+  }
+  main .home-banner .container .home-banner__content i {
+    top: calc(50% + 150px);
   }
   main .informations .container .informations__for-whom__text {
     padding: 0 10px 0 10px;
