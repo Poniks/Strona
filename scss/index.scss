@@ -764,10 +764,6 @@ footer {
     }
 }
             
-        
-    
-
-
 @media only screen and (max-width: 992px) {
     main .home-banner .container  .home-banner__content .controller {
         display: none;
@@ -776,24 +772,26 @@ footer {
 
 @media only screen and (max-width: 768px) {
     header nav {
-        &.opened .container  .hamburger {
-            span {
-                background-color: #fff;
-                &:nth-child(1) {
-                    top: 9px;
-                    width: 0%;
-                    left: 50%;
-                }
-                &:nth-child(2) {
-                    transform: rotate(45deg);
-                }
-                &:nth-child(3) {
-                    transform: rotate(-45deg);
-                }
-                &:nth-child(4) {
-                    top: 9px;
-                    width: 0%;
-                    left: 50%;
+        &.opened .container { 
+            .hamburger {
+                span {
+                    background-color: #fff;
+                    &:nth-child(1) {
+                        top: 9px;
+                        width: 0%;
+                        left: 50%;
+                    }
+                    &:nth-child(2) {
+                        transform: rotate(45deg);
+                    }
+                    &:nth-child(3) {
+                        transform: rotate(-45deg);
+                    }
+                    &:nth-child(4) {
+                        top: 9px;
+                        width: 0%;
+                        left: 50%;
+                    }
                 }
             }
             
@@ -871,9 +869,7 @@ footer {
             }
         }
     }
-    
-
-    main .home-banner .container {
+    main {
         .home-banner__content {
             &__slider-box {
                 &__slider {
@@ -1063,24 +1059,26 @@ footer {
             }
         }
     }
-    main .home-banner .container .home-banner__content {
-        &__slider-box {
-            &__slider {
-                &__slide {
-                    h2 {
-                        font-size: 28px;
-                    }
-
-                    a {
-                        font-size: 12px;
-                    }
-
-                    .btn {
-                        &.second {
-                            width: 190px;
+    main {
+        .home-banner .container .home-banner__content {
+            &__slider-box {
+                &__slider {
+                    &__slide {
+                        h2 {
+                            font-size: 28px;
                         }
-                        &.first {
-                            width: 155px;
+
+                        a {
+                            font-size: 12px;
+                        }
+
+                        .btn {
+                            &.second {
+                                width: 190px;
+                            }
+                            &.first {
+                                width: 155px;
+                            }
                         }
                     }
                 }

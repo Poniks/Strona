@@ -682,21 +682,21 @@ footer .container .footer-items ul li a span:last-child {
     width: 0%;
     left: 50%;
   }
-  header nav.opened .container .hamburger ul {
+  header nav.opened .container ul {
     width: 50%;
     display: block;
     text-align: center;
   }
-  header nav.opened .container .hamburger ul li {
+  header nav.opened .container ul li {
     display: block;
     float: none;
     text-align: center;
     margin-bottom: 35px;
   }
-  header nav.opened .container .hamburger ul li:first-child {
+  header nav.opened .container ul li:first-child {
     margin-top: 80px;
   }
-  header nav.opened .container .hamburger ul li:last-child {
+  header nav.opened .container ul li:last-child {
     margin-right: 20px;
   }
   header nav .container .hamburger {
@@ -751,80 +751,80 @@ footer .container .footer-items ul li a span:last-child {
     display: none;
   }
 
-  main .home-banner .container .home-banner__content__slider-box__slider__slide h2 {
+  main .home-banner__content__slider-box__slider__slide h2 {
     font-size: 36px;
   }
-  main .home-banner .container .home-banner__content__slider-box__slider__slide a {
+  main .home-banner__content__slider-box__slider__slide a {
     font-size: 14px;
   }
-  main .home-banner .container .home-banner__content__slider-box__slider__slide .btn.first {
+  main .home-banner__content__slider-box__slider__slide .btn.first {
     width: 180px;
   }
-  main .home-banner .container .home-banner__content__slider-box__slider__slide .btn.second {
+  main .home-banner__content__slider-box__slider__slide .btn.second {
     width: 220px;
   }
-  main .home-banner .container .informations .container .informations__for-whom {
+  main .informations .container .informations__for-whom {
     flex-wrap: wrap;
     justify-content: space-around;
   }
-  main .home-banner .container .informations .container .informations__for-whom__text {
+  main .informations .container .informations__for-whom__text {
     flex-basis: 100%;
     margin-bottom: 50px;
     padding: 0 25px 0 25px;
   }
-  main .home-banner .container .informations .container .informations__for-whom__text h2 {
+  main .informations .container .informations__for-whom__text h2 {
     text-align: center;
   }
-  main .home-banner .container .informations .container .informations__for-whom__text ol li {
+  main .informations .container .informations__for-whom__text ol li {
     font-size: 16px;
   }
-  main .home-banner .container .informations .container .informations__for-whom__text ol li i {
+  main .informations .container .informations__for-whom__text ol li i {
     margin-left: 75px;
   }
-  main .home-banner .container .informations .container .informations__for-whom__img {
+  main .informations .container .informations__for-whom__img {
     flex-basis: 360px;
   }
-  main .home-banner .container .informations .container .informations__for-whom__img img {
+  main .informations .container .informations__for-whom__img img {
     top: -130px;
     left: -50px;
     transform: scale(0.9);
   }
-  main .home-banner .container .informations .container .informations__for-what {
+  main .informations .container .informations__for-what {
     flex-wrap: wrap;
     justify-content: space-around;
   }
-  main .home-banner .container .informations .container .informations__for-what__img {
+  main .informations .container .informations__for-what__img {
     flex-basis: 360px;
   }
-  main .home-banner .container .informations .container .informations__for-what__text {
+  main .informations .container .informations__for-what__text {
     flex-basis: 100%;
     order: -1;
     margin-bottom: 50px;
     padding: 0 25px 0 25px;
   }
-  main .home-banner .container .informations .container .informations__for-what__text h2 {
+  main .informations .container .informations__for-what__text h2 {
     text-align: center;
   }
-  main .home-banner .container .informations .container .informations__with-who {
+  main .informations .container .informations__with-who {
     flex-wrap: wrap;
     justify-content: space-around;
   }
-  main .home-banner .container .informations .container .informations__with-who__text {
+  main .informations .container .informations__with-who__text {
     flex-basis: 100%;
     margin-bottom: 50px;
     padding: 0 25px 0 25px;
   }
-  main .home-banner .container .informations .container .informations__with-who__text h2 {
+  main .informations .container .informations__with-who__text h2 {
     text-align: center;
   }
-  main .home-banner .container .informations .container .informations__with-who__img {
+  main .informations .container .informations__with-who__img {
     flex-basis: 360px;
   }
-  main .home-banner .container .informations .container .informations__with-who__img img[alt=building] {
+  main .informations .container .informations__with-who__img img[alt=building] {
     left: -100%;
     top: -55%;
   }
-  main .home-banner .container .popup .content .close-btn {
+  main .popup .content .close-btn {
     right: 0px;
   }
 
@@ -910,19 +910,19 @@ footer .container .footer-items ul li a span:last-child {
   main .home-banner .container .home-banner__content__slider-box__slider__slide .btn.first {
     width: 155px;
   }
-  main .home-banner .container .home-banner__content .informations .container .informations__for-whom {
+  main .informations .container .informations__for-whom {
     margin-top: 100px;
   }
-  main .home-banner .container .home-banner__content .informations .container .informations__for-what {
+  main .informations .container .informations__for-what {
     margin-top: 100px;
   }
-  main .home-banner .container .home-banner__content .informations .container .informations__with-who {
+  main .informations .container .informations__with-who {
     margin-top: 100px;
   }
-  main .home-banner .container .home-banner__content .popup .content {
+  main .popup .content {
     width: 100%;
   }
-  main .home-banner .container .home-banner__content .popup .content iframe {
+  main .popup .content iframe {
     width: 100%;
   }
 
