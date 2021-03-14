@@ -38,22 +38,22 @@
                         <div class="slider-box">
                             <div class="slider" id='slider'>
                                 <div class="slide">
-                                    <h1>Będziesz się uczyć z ciekawością. <p>Obiecujemy.</p></h1>
+                                    <h2>Będziesz się uczyć z ciekawością. <p>Obiecujemy.</p></h2>
                                     <a href="#" class="btn first">Zobacz więcej</a>
                                     <a href="#" class="btn second">Umów się z aniołem</a>
                                 </div>
                                 <div class="slide">
-                                    <h1>Będziesz się uczyć z ciekawością. <p>Obiecujemy.</p></h1>
+                                    <h2>Będziesz się uczyć z ciekawością. <p>Obiecujemy.</p></h2>
                                     <a href="#" class="btn first">Zobacz więcej</a>
                                     <a href="#" class="btn second">Umów się z aniołem</a>
                                 </div>
                                 <div class="slide">
-                                    <h1>Będziesz się uczyć z ciekawością. <p>Obiecujemy.</p></h1>
+                                    <h2>Będziesz się uczyć z ciekawością. <p>Obiecujemy.</p></h2>
                                     <a href="#" class="btn first">Zobacz więcej</a>
                                     <a href="#" class="btn second">Umów się z aniołem</a>
                                 </div>
                                 <div class="slide">
-                                    <h1>Będziesz się uczyć z ciekawością. <p>Obiecujemy.</p></h1>
+                                    <h2>Będziesz się uczyć z ciekawością. <p>Obiecujemy.</p></h2>
                                     <a href="#" class="btn first">Zobacz więcej</a>
                                     <a href="#" class="btn second">Umów się z aniołem</a>
                                 </div>
@@ -202,12 +202,9 @@
                         </ul>
                     </div>
                     <div class="footer-items__item">
-                        <ul>
+                        <ul class="column">
                             <li>
-                                <a href="">
-                                    <span>O nas</span>
-                                    <span>O nas</span>
-                                </a>
+                                <span class="title">O nas</span>
                             </li>
                             <li>
                                 <a href="">
@@ -234,12 +231,9 @@
                                 </a>
                             </li>
                         </ul>
-                        <ul>
+                        <ul class="column">
                             <li>
-                                <a href="">
-                                    <span>Dla kandydata</span>
-                                    <span>Dla kandydata</span>
-                                </a>
+                                <span class="title">Dla kandydata</span>
                             </li>
                             <li>
                                 <a href="">
@@ -266,12 +260,9 @@
                                 </a>
                             </li>
                         </ul>
-                        <ul>
+                        <ul class="column">
                             <li>
-                                <a href="">
-                                    <span>Dla studenta</span>
-                                    <span>Dla studenta</span>
-                                </a>
+                                <span class="title">Dla studenta</span>
                             </li>
                             <li>
                                 <a href="">
@@ -298,12 +289,9 @@
                                 </a>
                             </li>
                         </ul>
-                        <ul>
+                        <ul class="column">
                             <li>
-                                <a href="">
-                                    <span>Dla biznesu</span>
-                                    <span>Dla biznesu</span>
-                                </a>
+                                <span class="title">Dla biznesu</span>
                             </li>
                             <li>
                                 <a href="">
@@ -330,12 +318,9 @@
                                 </a>
                             </li>
                         </ul>
-                        <ul>
+                        <ul class="column">
                             <li>
-                                <a href="">
-                                    <span>Na skróty</span>
-                                    <span>Na skróty</span>
-                                </a>
+                                <span class="title">Na skróty</span>
                             </li>
                             <li>
                                 <a href="">
@@ -394,13 +379,13 @@
             arrowLeft.onclick = function() {
                 let active = document.getElementsByClassName('active')[0].id
 
-                if(!(active === 'radio1')){
-                    let current = document.getElementsByClassName('active');
+                let current = document.getElementsByClassName('active');
                     current[0].classList.remove('active');
-                }
 
-                if(active === 'radio1') slider.style.transform = 'translateX(0)';
-                else if(active === 'radio2') {
+                if(active === 'radio1') {
+                    slider.style.transform = 'translateX(-75%)';
+                    radio4.classList.add('active');
+                } else if(active === 'radio2') {
                     slider.style.transform = 'translateX(0)';
                     radio1.classList.add('active');
                 } else if(active === 'radio3') {
@@ -416,10 +401,8 @@
             arrowRight.onclick = function() {
                 let active = document.getElementsByClassName('active')[0].id
 
-                if(!(active === 'radio4')){
-                    let current = document.getElementsByClassName('active');
-                    current[0].classList.remove('active');
-                }
+                let current = document.getElementsByClassName('active');
+                current[0].classList.remove('active');
 
                 if(active === 'radio1') {
                     slider.style.transform = 'translateX(-25%)';
@@ -430,7 +413,10 @@
                 } else if(active === 'radio3') {
                     slider.style.transform = 'translateX(-75%)';
                     radio4.classList.add('active');
-                } else if(active === 'radio4') slider.style.transform = 'translateX(-75%)';        
+                } else if(active === 'radio4') {
+                    slider.style.transform = 'translateX(0%)';
+                    radio1.classList.add('active');
+                }        
             }
             
             function togglePopup() {
@@ -450,6 +436,15 @@
             mobileMenu.addEventListener('click', function() {
             document.querySelector('nav').classList.toggle('opened');
             })
+
+            let footerMenu = document.querySelectorAll('.column li .title');
+
+            footerMenu.forEach((item, index) => {
+                item.addEventListener('click', function() {
+                    document.querySelectorAll('.column')[index].classList.toggle('active');
+                })
+            })
+
         </script>
     </body>
 </html>
