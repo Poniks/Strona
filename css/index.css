@@ -105,23 +105,34 @@ main .home-banner .container {
   margin-top: -1px;
   height: 100%;
 }
-main .home-banner .container .text-content {
+main .home-banner .container .home-banner__content {
   color: white;
   position: absolute;
   top: 60%;
   left: 0;
   transform: translateY(-50%);
 }
-main .home-banner .container .text-content h2 {
+main .home-banner .container .home-banner__content__slider-box {
+  width: 650px;
+  overflow: hidden;
+}
+main .home-banner .container .home-banner__content__slider-box__slider {
+  display: inline-flex;
+  transition: 0.5s;
+}
+main .home-banner .container .home-banner__content__slider-box__slider__slide {
+  width: 650px;
+}
+main .home-banner .container .home-banner__content__slider-box__slider__slide h2 {
   font-size: 40px;
   font-weight: 200;
 }
-main .home-banner .container .text-content h2 p {
+main .home-banner .container .home-banner__content__slider-box__slider__slide h2 p {
   display: block;
   color: #00b6dc;
   margin: 20px 0;
 }
-main .home-banner .container .text-content .btn {
+main .home-banner .container .home-banner__content__slider-box__slider__slide .btn {
   width: 200px;
   padding: 20px 0;
   margin-right: 20px;
@@ -133,45 +144,34 @@ main .home-banner .container .text-content .btn {
   border: 2px solid #f0f3f5;
   transition: 0.5s;
 }
-main .home-banner .container .text-content .btn.first {
+main .home-banner .container .home-banner__content__slider-box__slider__slide .btn.first {
   background-color: white;
   width: 190px;
   color: #002841;
 }
-main .home-banner .container .text-content .btn.first:hover {
+main .home-banner .container .home-banner__content__slider-box__slider__slide .btn.first:hover {
   color: white;
   background-color: transparent;
   border-radius: 0%;
 }
-main .home-banner .container .text-content .btn.second {
+main .home-banner .container .home-banner__content__slider-box__slider__slide .btn.second {
   background-color: transparent;
   color: white;
   width: 230px;
 }
-main .home-banner .container .text-content .btn.second:hover {
+main .home-banner .container .home-banner__content__slider-box__slider__slide .btn.second:hover {
   color: #002841;
   background-color: white;
   border-radius: 0%;
 }
-main .home-banner .container .text-content .slider-box {
-  width: 650px;
-  overflow: hidden;
-}
-main .home-banner .container .text-content .slider-box .slider {
-  display: inline-flex;
-  transition: 0.5s;
-}
-main .home-banner .container .text-content .slider-box .slider .slide {
-  width: 650px;
-}
-main .home-banner .container .text-content .controller {
+main .home-banner .container .home-banner__content .controller {
   position: absolute;
   top: 0;
   right: -93%;
   display: flex;
   flex-direction: column;
 }
-main .home-banner .container .text-content .controller .radio {
+main .home-banner .container .home-banner__content .controller .radio {
   margin: 15px 0;
   width: 12px;
   height: 12px;
@@ -180,20 +180,20 @@ main .home-banner .container .text-content .controller .radio {
   cursor: pointer;
   transition: 0.5s background-color;
 }
-main .home-banner .container .text-content .controller .radio.active {
+main .home-banner .container .home-banner__content .controller .radio.active {
   background-color: orange;
 }
-main .home-banner .container .text-content .controller .radio:hover {
+main .home-banner .container .home-banner__content .controller .radio:hover {
   border: 2px solid orange;
 }
-main .home-banner .container .text-content i {
+main .home-banner .container .home-banner__content i {
   margin-top: 90px;
   font-size: 30px;
   cursor: pointer;
   margin-right: 15px;
   transition: 0.5s;
 }
-main .home-banner .container .text-content i:hover {
+main .home-banner .container .home-banner__content i:hover {
   color: orange;
 }
 main .informations .container .informations__for-whom {
@@ -410,6 +410,9 @@ main .popup .content .close-btn {
   box-shadow: 0px 3px 6px 0px rgba(145, 154, 159, 0.08);
   transition: 0.3s;
 }
+.form-section .container .form-section__form form label input[type=text].invalid, .form-section .container .form-section__form form label textarea.invalid {
+  border: 1px solid red;
+}
 .form-section .container .form-section__form form label input[type=text][id=email], .form-section .container .form-section__form form label textarea[id=email] {
   width: 100%;
 }
@@ -420,12 +423,8 @@ main .popup .content .close-btn {
   color: transparent;
 }
 .form-section .container .form-section__form form label input[type=text]::placeholder, .form-section .container .form-section__form form label textarea::placeholder {
-  color: #222;
+  color: transparent;
   transition: color 0.3s;
-}
-.form-section .container .form-section__form form label input[type=checkbox] {
-  background-color: red;
-  border: 1px solid red;
 }
 .form-section .container .form-section__form form label textarea {
   width: 100%;
@@ -446,9 +445,9 @@ main .popup .content .close-btn {
 .form-section .container .form-section__form form label .placeholder.textarea {
   top: 35px;
 }
-.form-section .container .form-section__form form label textarea:valid + .placeholder,
+.form-section .container .form-section__form form label textarea:not(:placeholder-shown) + .placeholder,
+.form-section .container .form-section__form form label input:not(:placeholder-shown) + .placeholder,
 .form-section .container .form-section__form form label textarea:focus + .placeholder,
-.form-section .container .form-section__form form label input:valid + .placeholder,
 .form-section .container .form-section__form form label input:focus + .placeholder {
   top: 15px;
   font-size: 10px;
@@ -459,15 +458,28 @@ main .popup .content .close-btn {
   background-color: #00b6dc;
   box-shadow: 0px 11px 24px 0px rgba(0, 182, 220, 0.12);
   border-radius: 25px;
-  border: none;
+  border: 1px solid transparent;
   color: white;
   font-size: 14px;
   text-transform: uppercase;
   margin: 40px auto 0;
+  transition: 0.5s;
+  cursor: pointer;
+}
+.form-section .container .form-section__form form input[type=submit]:hover {
+  color: #00b6dc;
+  border: 1px solid #00b6dc;
+  background-color: transparent;
 }
 
 footer {
   background-color: #001927;
+}
+footer .container p {
+  color: white;
+  position: absolute;
+  bottom: 5%;
+  right: 5%;
 }
 footer .container .footer-items {
   padding-top: 90px;
@@ -550,10 +562,10 @@ footer .container .footer-items ul li a span:last-child {
     margin: 0 20px;
   }
 
-  main .home-banner .container .text-content {
+  main .home-banner .container .home-banner__content {
     margin-left: 10px;
   }
-  main .home-banner .container .text-content .controller {
+  main .home-banner .container .home-banner__content .controller {
     right: -35%;
   }
   main .informations .container .informations__for-whom {
@@ -629,24 +641,24 @@ footer .container .footer-items ul li a span:last-child {
     width: 255px;
   }
 
-  footer .container .footer-items__item:last-child {
+  footer .container .footer-items .footer-items__item:last-child {
     flex-wrap: wrap;
   }
-  footer .container .footer-items__item:last-child ul {
+  footer .container .footer-items .footer-items__item:last-child ul {
     flex-basis: 33%;
     padding: 0 0 0 5px;
   }
-  footer .container .footer-items__item:first-child ul {
+  footer .container .footer-items .footer-items__item:first-child ul {
     width: auto;
     padding: 0 20px 0 0;
   }
-  footer .container .footer-items__item:first-child ul .footer-items__map {
+  footer .container .footer-items .footer-items__item:first-child ul .footer-items__map {
     width: 170px;
     height: 170px;
   }
 }
 @media only screen and (max-width: 992px) {
-  main .home-banner .container .text-content .controller {
+  main .home-banner .container .home-banner__content .controller {
     display: none;
   }
 }
@@ -670,21 +682,21 @@ footer .container .footer-items ul li a span:last-child {
     width: 0%;
     left: 50%;
   }
-  header nav.opened .container ul {
+  header nav.opened .container .hamburger ul {
     width: 50%;
     display: block;
     text-align: center;
   }
-  header nav.opened .container ul li {
+  header nav.opened .container .hamburger ul li {
     display: block;
     float: none;
     text-align: center;
     margin-bottom: 35px;
   }
-  header nav.opened .container ul li:first-child {
+  header nav.opened .container .hamburger ul li:first-child {
     margin-top: 80px;
   }
-  header nav.opened .container ul li:last-child {
+  header nav.opened .container .hamburger ul li:last-child {
     margin-right: 20px;
   }
   header nav .container .hamburger {
@@ -739,75 +751,81 @@ footer .container .footer-items ul li a span:last-child {
     display: none;
   }
 
-  main .home-banner .container .text-content .slider-box .slider .slide h2 {
+  main .home-banner .container .home-banner__content__slider-box__slider__slide h2 {
     font-size: 36px;
   }
-  main .home-banner .container .text-content .slider-box .slider .slide a {
+  main .home-banner .container .home-banner__content__slider-box__slider__slide a {
     font-size: 14px;
   }
-  main .home-banner .container .text-content .slider-box .slider .slide .btn.first {
+  main .home-banner .container .home-banner__content__slider-box__slider__slide .btn.first {
     width: 180px;
   }
-  main .home-banner .container .text-content .slider-box .slider .slide .btn.second {
+  main .home-banner .container .home-banner__content__slider-box__slider__slide .btn.second {
     width: 220px;
   }
-  main .informations .container .informations__for-whom {
+  main .home-banner .container .informations .container .informations__for-whom {
     flex-wrap: wrap;
     justify-content: space-around;
   }
-  main .informations .container .informations__for-whom__text {
+  main .home-banner .container .informations .container .informations__for-whom__text {
     flex-basis: 100%;
     margin-bottom: 50px;
     padding: 0 25px 0 25px;
   }
-  main .informations .container .informations__for-whom__text h2 {
+  main .home-banner .container .informations .container .informations__for-whom__text h2 {
     text-align: center;
   }
-  main .informations .container .informations__for-whom__text ol li i {
+  main .home-banner .container .informations .container .informations__for-whom__text ol li {
+    font-size: 16px;
+  }
+  main .home-banner .container .informations .container .informations__for-whom__text ol li i {
     margin-left: 75px;
   }
-  main .informations .container .informations__for-whom__img {
+  main .home-banner .container .informations .container .informations__for-whom__img {
     flex-basis: 360px;
   }
-  main .informations .container .informations__for-whom__img img {
+  main .home-banner .container .informations .container .informations__for-whom__img img {
     top: -130px;
     left: -50px;
     transform: scale(0.9);
   }
-  main .informations .container .informations__for-what {
+  main .home-banner .container .informations .container .informations__for-what {
     flex-wrap: wrap;
     justify-content: space-around;
   }
-  main .informations .container .informations__for-what__img {
+  main .home-banner .container .informations .container .informations__for-what__img {
     flex-basis: 360px;
   }
-  main .informations .container .informations__for-what__text {
+  main .home-banner .container .informations .container .informations__for-what__text {
     flex-basis: 100%;
     order: -1;
     margin-bottom: 50px;
     padding: 0 25px 0 25px;
   }
-  main .informations .container .informations__for-what__text h2 {
+  main .home-banner .container .informations .container .informations__for-what__text h2 {
     text-align: center;
   }
-  main .informations .container .informations__with-who {
+  main .home-banner .container .informations .container .informations__with-who {
     flex-wrap: wrap;
     justify-content: space-around;
   }
-  main .informations .container .informations__with-who__text {
+  main .home-banner .container .informations .container .informations__with-who__text {
     flex-basis: 100%;
     margin-bottom: 50px;
     padding: 0 25px 0 25px;
   }
-  main .informations .container .informations__with-who__text h2 {
+  main .home-banner .container .informations .container .informations__with-who__text h2 {
     text-align: center;
   }
-  main .informations .container .informations__with-who__img {
+  main .home-banner .container .informations .container .informations__with-who__img {
     flex-basis: 360px;
   }
-  main .informations .container .informations__with-who__img img[alt=building] {
+  main .home-banner .container .informations .container .informations__with-who__img img[alt=building] {
     left: -100%;
     top: -55%;
+  }
+  main .home-banner .container .popup .content .close-btn {
+    right: 0px;
   }
 
   .form-section .container .form-section__form form label {
@@ -880,17 +898,32 @@ footer .container .footer-items ul li a span:last-child {
     margin-right: 60px;
   }
 
-  main .home-banner .container .text-content .slider-box .slider .slide h2 {
+  main .home-banner .container .home-banner__content__slider-box__slider__slide h2 {
     font-size: 28px;
   }
-  main .home-banner .container .text-content .slider-box .slider .slide a {
+  main .home-banner .container .home-banner__content__slider-box__slider__slide a {
     font-size: 12px;
   }
-  main .home-banner .container .text-content .slider-box .slider .slide .btn.second {
+  main .home-banner .container .home-banner__content__slider-box__slider__slide .btn.second {
     width: 190px;
   }
-  main .home-banner .container .text-content .slider-box .slider .slide .btn.first {
+  main .home-banner .container .home-banner__content__slider-box__slider__slide .btn.first {
     width: 155px;
+  }
+  main .home-banner .container .home-banner__content .informations .container .informations__for-whom {
+    margin-top: 100px;
+  }
+  main .home-banner .container .home-banner__content .informations .container .informations__for-what {
+    margin-top: 100px;
+  }
+  main .home-banner .container .home-banner__content .informations .container .informations__with-who {
+    margin-top: 100px;
+  }
+  main .home-banner .container .home-banner__content .popup .content {
+    width: 100%;
+  }
+  main .home-banner .container .home-banner__content .popup .content iframe {
+    width: 100%;
   }
 
   footer .container .footer-items {
@@ -926,26 +959,59 @@ footer .container .footer-items ul li a span:last-child {
     margin-right: 60px;
   }
 
-  main .home-banner .container .text-content .slider-box {
+  main .home-banner .container .home-banner__content__slider-box {
     width: 400px;
   }
-  main .home-banner .container .text-content .slider-box .slider .slide {
+  main .home-banner .container .home-banner__content__slider-box__slider__slide {
     width: 400px;
   }
-  main .home-banner .container .text-content .slider-box .slider .slide h2 {
+  main .home-banner .container .home-banner__content__slider-box__slider__slide h2 {
     font-size: 20px;
   }
-  main .home-banner .container .text-content .slider-box .slider .slide a {
+  main .home-banner .container .home-banner__content__slider-box__slider__slide a {
     font-size: 10px;
   }
-  main .home-banner .container .text-content .slider-box .slider .slide .btn {
+  main .home-banner .container .home-banner__content__slider-box__slider__slide .btn {
     margin-right: 10px;
   }
-  main .home-banner .container .text-content .slider-box .slider .slide .btn.second {
+  main .home-banner .container .home-banner__content__slider-box__slider__slide .btn.second {
     width: 155px;
   }
-  main .home-banner .container .text-content .slider-box .slider .slide .btn.first {
+  main .home-banner .container .home-banner__content__slider-box__slider__slide .btn.first {
     width: 140px;
+  }
+  main .informations .container .informations__for-whom__text {
+    padding: 0 10px 0 10px;
+  }
+  main .informations .container .informations__for-whom__text h2 {
+    font-size: 30px;
+  }
+  main .informations .container .informations__for-whom__text p {
+    font-size: 14px;
+  }
+  main .informations .container .informations__for-whom__text ol li {
+    font-size: 14px;
+  }
+  main .informations .container .informations__for-whom__text ol li i {
+    margin-left: 50px;
+  }
+  main .informations .container .informations__for-what__text {
+    padding: 0 10px 0 10px;
+  }
+  main .informations .container .informations__for-what__text h2 {
+    font-size: 30px;
+  }
+  main .informations .container .informations__for-what__text p {
+    font-size: 14px;
+  }
+  main .informations .container .informations__with-who__text {
+    padding: 0 10px 0 10px;
+  }
+  main .informations .container .informations__with-who__text h2 {
+    font-size: 30px;
+  }
+  main .informations .container .informations__with-who__text p {
+    font-size: 14px;
   }
 
   footer .container .footer-items__item:last-child ul {

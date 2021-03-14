@@ -9,12 +9,12 @@
     </head>
     <body>
         <div class="bg">
-            <img src="bg.jpg" alt="bg">
+            <img src="images/bg.jpg" alt="bg">
         </div>   
         <header>
             <nav class="">
                 <div class="container">
-                    <img src="logo.png" alt="logo">
+                    <img src="images/logo.png" alt="logo">
                     <div class="hamburger">
                         <span></span>
                         <span></span>
@@ -34,25 +34,25 @@
         <main>
             <div class="home-banner">
                 <div class="container">
-                    <div class="text-content">
-                        <div class="slider-box">
-                            <div class="slider" id='slider'>
-                                <div class="slide">
+                    <div class="home-banner__content">
+                        <div class="home-banner__content__slider-box">
+                            <div class="home-banner__content__slider-box__slider" id='slider'>
+                                <div class="home-banner__content__slider-box__slider__slide">
                                     <h2>Będziesz się uczyć z ciekawością. <p>Obiecujemy.</p></h2>
                                     <a href="#" class="btn first">Zobacz więcej</a>
                                     <a href="#" class="btn second">Umów się z aniołem</a>
                                 </div>
-                                <div class="slide">
+                                <div class="home-banner__content__slider-box__slider__slide">
                                     <h2>Będziesz się uczyć z ciekawością. <p>Obiecujemy.</p></h2>
                                     <a href="#" class="btn first">Zobacz więcej</a>
                                     <a href="#" class="btn second">Umów się z aniołem</a>
                                 </div>
-                                <div class="slide">
+                                <div class="home-banner__content__slider-box__slider__slide">
                                     <h2>Będziesz się uczyć z ciekawością. <p>Obiecujemy.</p></h2>
                                     <a href="#" class="btn first">Zobacz więcej</a>
                                     <a href="#" class="btn second">Umów się z aniołem</a>
                                 </div>
-                                <div class="slide">
+                                <div class="home-banner__content__slider-box__slider__slide">
                                     <h2>Będziesz się uczyć z ciekawością. <p>Obiecujemy.</p></h2>
                                     <a href="#" class="btn first">Zobacz więcej</a>
                                     <a href="#" class="btn second">Umów się z aniołem</a>
@@ -96,17 +96,17 @@
                             </ol>
                         </div>
                         <div class="informations__for-whom__img">
-                            <img src="./globe.png" alt="globe">
+                            <img src="images/globe.png" alt="globe">
                         </div>
                     </div>
                     <div class="informations__for-what">
                         <div class="informations__for-what__img">
-                            <img src="./handshake.png" alt="handshake" class="informations__for-what__img__handshake">
-                            <img src="./new.png" alt="new" class="informations__for-what__img__new">
+                            <img src="images/handshake.png" alt="handshake" class="informations__for-what__img__handshake">
+                            <img src="images/new.png" alt="new" class="informations__for-what__img__new">
                             <p>Nowość</p>
                         </div>
                         <div class="informations__for-what__text">
-                            <h2>Po Co?</h2>
+                            <h2>Po co?</h2>
                             <p>UW wie co zrobić, by programy proponowanych kierunków studiów były jak
                                 najbardziej atrakcyjne z biznesowego punktu widzenia. Do współpracy zapraszamy
                                 przedsiębiorców, trenerów, doświadczonych praktyków. Dbamy o to, żeby nasi 
@@ -136,8 +136,8 @@
                             </p>
                         </div>
                         <div class="informations__with-who__img">
-                            <img src="./building.png" alt="building">
-                            <img src="./play-button.png" alt="play" onclick="togglePopup()">
+                            <img src="images/building.png" alt="building">
+                            <img src="images/play-button.png" alt="play" onclick="togglePopup()">
                         </div>
                     </div>
                 </div>
@@ -156,25 +156,25 @@
                 <div class="form-section__form">
                     <h3>Nie znalazłeś odpowiedniego kontaktu?</h3>
                     <p>Skorzystaj z formularza.</p>
-                    <form action="/action.php">
+                    <form method="post" enctype="multipart/form-data" action="/action.php">
                         <label>
-                            <input type="text" required>
+                            <input type="text" required placeholder="Imię" class="formInput" onchange="resetValidation(event)">
                             <span class="placeholder">Imię</span>
                         </label> 
                         <label>
-                            <input type="text" required>
+                            <input type="text" required placeholder="Nazwisko" class="formInput" onchange="resetValidation(event)">
                             <span class="placeholder">Nazwisko</span>
                         </label> 
                         <label style="width: 100%;">
-                            <input type="text" id="email" required>
+                            <input type="text" id="email" required placeholder="Adres e-mail" class="formInput" onchange="resetValidation(event)()" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" >
                             <span class="placeholder email">Adres e-mail</span>
                         </label>  
                         <label style="width: 100%; text-align: left;">
-                            <textarea name="" id="" cols="30" rows="10" required></textarea>
+                            <textarea name="" id="" cols="30" rows="10" required placeholder="Napisz wiadomość" class="formInput" onchange="resetValidation(event)"></textarea>
                             <span class="placeholder textarea">Napisz wiadomość</span>
                         </label> 
                         <label style="display: flex">
-                            <input type="checkbox">
+                            <input type="checkbox" required>
                             <p class="checkbox-text">Wyrażam zgodę na przetwarzanie moich danych osobowych w rozumiemiu ustawy z dnia 29 sierpnia
                                 1997 roku o ochronie danych osobowych oraz ustawy z dnia 16 lipca 2004 roku Prawo telekomunikacyjne
                                 w celach marketingowych przez Collegium Da Vinci i oświadczam, iż podanie przeze mnie danych
@@ -182,7 +182,7 @@
                                 danych osobowych, ich zmiany oraz usunięcia.
                             </p>
                         </label>  
-                        <input type="submit" value="Wyślij">            
+                        <input type="submit" value="Wyślij" onclick="validation()">            
                     </form>
                 </div>
             </div>
@@ -348,103 +348,12 @@
                             </li>
                         </ul>
                     </div>
-                </div>
+                </div> 
+                <p>Projekt i realizacja: Crafton</p>
             </div>
         </footer>
         <script src="https://kit.fontawesome.com/7668132035.js" crossorigin="anonymous"></script>
-        <script>
-            let slider = document.getElementById('slider');
-            let radios = document.getElementsByClassName('radio')
-            let radio1 = document.getElementById('radio1');
-            let radio2 = document.getElementById('radio2');
-            let radio3 = document.getElementById('radio3');
-            let radio4 = document.getElementById('radio4');
-            let arrowLeft = document.getElementById('leftArrow');
-            let arrowRight = document.getElementById('rightArrow');
-
-            for(let i = 0; i < radios.length; i++){
-                radios[i].addEventListener('click', () => {
-                    let current = document.getElementsByClassName('active');
-
-                    current[0].classList.remove('active');
-                    radios[i].classList.add('active');
-
-                    if(current[0].id === 'radio1') slider.style.transform = 'translateX(0)';
-                    else if(current[0].id === 'radio2') slider.style.transform = 'translateX(-25%)';
-                    else if(current[0].id === 'radio3') slider.style.transform = 'translateX(-50%)';
-                    else if(current[0].id === 'radio4') slider.style.transform = 'translateX(-75%)';
-                })     
-            }
-
-            arrowLeft.onclick = function() {
-                let active = document.getElementsByClassName('active')[0].id
-
-                let current = document.getElementsByClassName('active');
-                    current[0].classList.remove('active');
-
-                if(active === 'radio1') {
-                    slider.style.transform = 'translateX(-75%)';
-                    radio4.classList.add('active');
-                } else if(active === 'radio2') {
-                    slider.style.transform = 'translateX(0)';
-                    radio1.classList.add('active');
-                } else if(active === 'radio3') {
-                    slider.style.transform = 'translateX(-25%)';
-                    radio2.classList.add('active');
-                } else if(active === 'radio4') {
-                    slider.style.transform = 'translateX(-50%)';
-                    radio3.classList.add('active');
-                }
-                
-            }
-
-            arrowRight.onclick = function() {
-                let active = document.getElementsByClassName('active')[0].id
-
-                let current = document.getElementsByClassName('active');
-                current[0].classList.remove('active');
-
-                if(active === 'radio1') {
-                    slider.style.transform = 'translateX(-25%)';
-                    radio2.classList.add('active');
-                }  else if(active === 'radio2') {
-                    slider.style.transform = 'translateX(-50%)';
-                    radio3.classList.add('active');
-                } else if(active === 'radio3') {
-                    slider.style.transform = 'translateX(-75%)';
-                    radio4.classList.add('active');
-                } else if(active === 'radio4') {
-                    slider.style.transform = 'translateX(0%)';
-                    radio1.classList.add('active');
-                }        
-            }
-            
-            function togglePopup() {
-                document.getElementById('popup-1').classList.toggle('active');
-            }
-
-            window.addEventListener('scroll', function() {
-                if (document.body.scrollTop > 0 || document.documentElement.scrollTop > 0) {
-                    document.querySelector("nav").classList.add("sticky");
-                } else {
-                    document.querySelector("nav").classList.remove("sticky");
-                }
-            })
-
-            let mobileMenu = document.querySelector('.hamburger');
-
-            mobileMenu.addEventListener('click', function() {
-            document.querySelector('nav').classList.toggle('opened');
-            })
-
-            let footerMenu = document.querySelectorAll('.column li .title');
-
-            footerMenu.forEach((item, index) => {
-                item.addEventListener('click', function() {
-                    document.querySelectorAll('.column')[index].classList.toggle('active');
-                })
-            })
-
-        </script>
+        <script src="js/scripts.js"></script>
+        <script src="js/backend.js"></script>
     </body>
 </html>
