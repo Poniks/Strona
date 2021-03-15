@@ -128,7 +128,7 @@ main .home-banner .container .home-banner__content__slider-box__slider__slide h2
   font-size: 40px;
   font-weight: 200;
 }
-main .home-banner .container .home-banner__content__slider-box__slider__slide h2 p {
+main .home-banner .container .home-banner__content__slider-box__slider__slide h2 span {
   display: block;
   color: #00b6dc;
   margin: 20px 0;
@@ -379,10 +379,8 @@ main .popup .content .close-btn {
   color: #333333;
   font-size: 18px;
 }
-.form-section .container .form-section__form p {
+.form-section .container .form-section__form .checkbox-text {
   color: #7b94a5;
-}
-.form-section .container .form-section__form p.checkbox-text {
   margin-top: 0px;
   padding-left: 15px;
   text-align: left;

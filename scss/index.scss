@@ -130,7 +130,7 @@ main {
                             h2 {
                                 font-size: 40px;
                                 font-weight: 200;
-                                p {
+                                span {
                                     display: block;
                                     color: #00b6dc;
                                     margin: 20px 0;
@@ -424,19 +424,17 @@ main {
             font-size: 18px;
         }
 
-        p {
-            color: #7b94a5;  
-
-            &.checkbox-text {
-                margin-top: 0px;
-                padding-left: 15px;
-                text-align: left;
-                font-size: 10px;
-                color: rgb(0, 40, 65);
-                font-weight: bold;
-                line-height: 1.6;
-            }
+        .checkbox-text {
+            color: #7b94a5; 
+            margin-top: 0px;
+            padding-left: 15px;
+            text-align: left;
+            font-size: 10px;
+            color: rgb(0, 40, 65);
+            font-weight: bold;
+            line-height: 1.6;
         }
+
         form {
             margin: 40px auto 0px;
             width: 50%;
